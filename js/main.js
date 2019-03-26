@@ -1,11 +1,11 @@
 const slides = document.querySelectorAll('.slide');
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
-// const autoSlider = document.querySelector('#autoSlider');
+const autoSlider = document.querySelector('#autoSlider');
 
-let auto = true;
+let auto = false;
 
-const intervalTime = 7000;
+const intervalTime = 3000;
 let slideInterval;
 
 const nextSlide = () => {
@@ -60,3 +60,16 @@ prev.addEventListener('click', e => {
 if(auto) {
   slideInterval = setInterval(nextSlide, intervalTime);
 }
+
+// Play/Pause button
+autoSlider.addEventListener('click', e => {
+  auto = !auto;
+  if(auto) {
+    slideInterval = setInterval(nextSlide, intervalTime);
+    autoSlider.innerHTML = '<i class="fas fa-play"></i>';
+  } else {
+    clearInterval(slideInterval);
+    auto = false;
+    autoSlider.innerHTML = '<i class="fas fa-pause"></i>';
+  }
+})
