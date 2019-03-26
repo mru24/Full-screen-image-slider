@@ -4,6 +4,10 @@
   @media only screen and (max-width: 700px)
     @content
 
+@mixin mobile_portrait
+  @media (max-width: 800px) and (orientation: portrait)
+    @content
+
 *
   margin: 0
   padding: 0
@@ -66,6 +70,14 @@ body
   @for $i from 1 through 6
     .slide:nth-child(#{$i})
       background: url('../images/photo0#{$i}_resize.jpg')
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: top left
+
+@include mobile_portrait
+  @for $i from 1 through 6
+    .slide:nth-child(#{$i})
+      background: url('../images/photo0#{$i}_portrait.jpg')
       background-size: cover
       background-repeat: no-repeat
       background-position: top left
