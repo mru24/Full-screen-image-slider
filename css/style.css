@@ -39,7 +39,7 @@ body .slider .slide.active .content {
   transition: all 0.7s ease-in-out 0.6s;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   body .slider .slide.active .content {
     transform: translateY(-300px);
   }
@@ -56,7 +56,7 @@ body .slider .slide .content {
   color: #333;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   body .slider .slide .content {
     bottom: -300px;
     left: 0;
@@ -68,6 +68,15 @@ body .slider .slide .content {
   }
   body .slider .slide .content p {
     font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+  body .slider .slide .content h1 {
+    font-size: 22px;
+  }
+  body .slider .slide .content p {
+    font-size: 16px;
   }
 }
 
@@ -113,46 +122,7 @@ body .slider .slide .content {
   background-position: top left;
 }
 
-@media only screen and (max-width: 700px) {
-  .slide:nth-child(1) {
-    background: url("../images/photo01_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-  .slide:nth-child(2) {
-    background: url("../images/photo02_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-  .slide:nth-child(3) {
-    background: url("../images/photo03_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-  .slide:nth-child(4) {
-    background: url("../images/photo04_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-  .slide:nth-child(5) {
-    background: url("../images/photo05_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-  .slide:nth-child(6) {
-    background: url("../images/photo06_resize.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-  }
-}
-
-@media (max-width: 800px) and (orientation: portrait) {
+@media (max-width: 700px) {
   .slide:nth-child(1) {
     background: url("../images/photo01_mobile.jpg");
     background-size: cover;
@@ -191,6 +161,45 @@ body .slider .slide .content {
   }
 }
 
+@media (max-width: 800px) and (orientation: portrait) {
+  .slide:nth-child(1) {
+    background: url("../images/photo01_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .slide:nth-child(2) {
+    background: url("../images/photo02_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .slide:nth-child(3) {
+    background: url("../images/photo03_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .slide:nth-child(4) {
+    background: url("../images/photo04_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .slide:nth-child(5) {
+    background: url("../images/photo05_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .slide:nth-child(6) {
+    background: url("../images/photo06_portrait.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+}
+
 button {
   position: absolute;
   top: 48%;
@@ -205,7 +214,7 @@ button {
   transition: .4s;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   button {
     top: 35%;
     padding: 20px;
