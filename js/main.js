@@ -1,11 +1,14 @@
 const slides = document.querySelectorAll('.slide');
+const content = document.querySelectorAll('.content');
+
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
+
 const autoSlider = document.querySelector('#autoSlider');
 
 let auto = false;
 
-const intervalTime = 3000;
+const intervalTime = 7000;
 let slideInterval;
 
 const nextSlide = () => {
@@ -52,7 +55,7 @@ prev.addEventListener('click', e => {
   prevSlide();
   if(auto) {
     clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, intervalTime);
+    slideInterval = setInterval(prevSlide, intervalTime);
   }
 })
 
@@ -73,3 +76,18 @@ autoSlider.addEventListener('click', e => {
     autoSlider.innerHTML = '<i class="fas fa-pause"></i>';
   }
 })
+
+// Content hover - slider pause
+
+for (var i = 0; i < content.length; i++) {
+  content[i].addEventListener('mouseover', e => {
+    clearInterval(slideInterval);
+    auto = false;
+    autoSlider.innerHTML = '<i class="fas fa-pause"></i>';
+  });
+  content[i].addEventListener('mouseout', e => {
+    auto = true;
+    slideInterval = setInterval(nextSlide, intervalTime);
+    autoSlider.innerHTML = '<i class="fas fa-play"></i>';
+  });
+}

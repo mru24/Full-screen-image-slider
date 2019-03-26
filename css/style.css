@@ -47,6 +47,7 @@ body .slider .slide.active .content {
 
 body .slider .slide .content {
   position: absolute;
+  z-index: 1;
   bottom: 70px;
   left: -600px;
   opacity: 0;
@@ -54,6 +55,7 @@ body .slider .slide .content {
   padding: 20px;
   background: rgba(238, 238, 238, 0.85);
   color: #333;
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {
@@ -202,6 +204,7 @@ body .slider .slide .content {
 
 button {
   position: absolute;
+  z-index: 2;
   top: 48%;
   font-size: 30px;
   padding: 0px 10px;
@@ -235,10 +238,11 @@ button:hover {
 }
 
 #autoSlider {
-  left: 20px;
+  right: 20px;
   top: 20px;
   padding: 5px 15px;
   font-size: 14px;
+  transition: .4s;
 }
 
 @media (max-width: 700px) {

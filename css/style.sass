@@ -41,6 +41,7 @@ body
           transform: translateY(-300px)
       .content
         position: absolute
+        z-index: 1
         bottom: 70px
         left: -600px
         opacity: 0
@@ -48,6 +49,8 @@ body
         padding: 20px
         background: rgba(#eee, 0.85)
         color: #333
+        cursor: pointer
+        // pointer-events: all
         @include mobile
           bottom: -300px
           left: 0
@@ -90,6 +93,7 @@ body
 // BUTTONS
 button
   position: absolute
+  z-index: 2
   top: 48%
   font-size: 30px
   padding: 0px 10px
@@ -111,10 +115,11 @@ button
 #next
   right: 0
 #autoSlider
-  left: 20px
+  right: 20px
   top: 20px
   padding: 5px 15px
   font-size: 14px
+  transition: .4s
   @include mobile
     top: 20px
     padding: 5px 15px
